@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corinthians - História</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f4f4;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:#000;
+    padding:15px;
+    text-align:center;
+    z-index:1000;
+}
+
+nav a{
+    color:#fff;
+    margin:0 15px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#e30613;
+}
+
+nav a.active{
+    color:#e30613;
+    border-bottom:2px solid #e30613;
+}
+
+/* BANNER */
+.banner{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('corinthians1.jpg') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:120px 20px;
+}
+
+/* SEÇÕES */
+section{
+    background:white;
+    padding:25px;
+    margin-bottom:40px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.5s;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* TÍTULOS */
+h2{
+    margin-bottom:10px;
+}
+
+/* IMAGEM */
+.imagem{
+    width:100%;
+    margin-top:15px;
+    border-radius:10px;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    flex:1;
+    min-width:250px;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* ADMIN */
+.admin{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+button{
+    padding:10px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e30613;
+}
+
+/* LISTA */
+.item{
+    background:#eee;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    color:#aaa;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#historia">História</a>
+    <a href="#titulos">Títulos</a>
+    <a href="#admin">Admin</a>
+</nav>
+
+<div class="banner">
+    <div>
+        <h1>Sport Club Corinthians Paulista</h1>
+        <p>Paixão, luta e conquistas</p>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- FIXOS -->
+
+<section id="inicio">
+<h2>⚽ Fundação</h2>
+<p>Fundado em 1910 por operários, o Corinthians se tornou um dos maiores clubes do Brasil.</p>
+<img src="corinthians2.jpg" class="imagem">
+</section>
+
+<section id="historia">
+<h2>📖 História</h2>
+<p>O clube viveu momentos marcantes como o título de 1977 e a conquista da Libertadores e Mundial em 2012.</p>
+<img src="corinthians3.jpg" class="imagem">
+</section>
+
+<section id="titulos">
+<h2>🏆 Títulos</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Internacionais</h3>
+<p>Libertadores 2012</p>
+<p>Mundial 2000 e 2012</p>
+</div>
+
+<div class="card">
+<h3>Nacionais</h3>
+<p>7 Brasileiros</p>
+<p>4 Copas do Brasil</p>
+</div>
+
+<div class="card">
+<h3>Estaduais</h3>
+<p>Mais de 30 títulos</p>
+</div>
+</div>
+
+</section>
+
+<!-- DINÂMICO -->
+
+<div id="conteudo"></div>
+
+</div>
+
+<!-- ADMIN -->
+
+<div class="container" id="admin">
+<div class="admin">
+<h2>Painel Admin</h2>
+
+<input id="titulo" placeholder="Título">
+<textarea id="texto" placeholder="Texto"></textarea>
+<input id="imagem" placeholder="Imagem (ex: corinthians2.jpg)">
+
+<button onclick="salvar()">Salvar</button>
+
+<div id="lista"></div>
+</div>
+</div>
+
+<footer>
+<p>Site desenvolvido para trabalho escolar</p>
+</footer>
+
+<script>
+let editIndex=null;
+
+// storage
+if(!localStorage.getItem("dados")){
+    localStorage.setItem("dados", JSON.stringify([]));
+}
+
+// carregar
+function carregar(){
+    const dados=JSON.parse(localStorage.getItem("dados"));
+    const conteudo=document.getElementById("conteudo");
+    const lista=document.getElementById("lista");
+
+    conteudo.innerHTML="";
+    lista.innerHTML="";
+
+    dados.forEach((item,i)=>{
+        conteudo.innerHTML+=`
+        <section id="extra-${i}">
+            <h2>📌 ${item.titulo}</h2>
+            <p>${item.texto}</p>
+            <img src="${item.imagem}" class="imagem">
+        </section>`;
+
+        lista.innerHTML+=`
+        <div class="item">
+            <b>${item.titulo}</b><br>
+            <button onclick="editar(${i})">Editar</button>
+            <button onclick="remover(${i})">Excluir</button>
+        </div>`;
+    });
+
+    animar();
+}
+
+// salvar
+function salvar(){
+    const titulo=document.getElementById("titulo").value;
+    const texto=document.getElementById("texto").value;
+    const imagem=document.getElementById("imagem").value;
+
+    if(!titulo || !texto){
+        alert("Preencha os campos");
+        return;
+    }
+
+    const dados=JSON.parse(localStorage.getItem("dados"));
+
+    if(editIndex===null){
+        dados.push({titulo,texto,imagem});
+    }else{
+        dados[editIndex]={titulo,texto,imagem};
+        editIndex=null;
+    }
+
+    localStorage.setItem("dados", JSON.stringify(dados));
+    limpar();
+    carregar();
+}
+
+// editar
+function editar(i){
+    const dados=JSON.parse(localStorage.getItem("dados"));
+    document.getElementById("titulo").value=dados[i].titulo;
+    document.getElementById("texto").value=dados[i].texto;
+    document.getElementById("imagem").value=dados[i].imagem;
+    editIndex=i;
+}
+
+// remover
+function remover(i){
+    const dados=JSON.parse(localStorage.getItem("dados"));
+    dados.splice(i,1);
+    localStorage.setItem("dados", JSON.stringify(dados));
+    carregar();
+}
+
+// limpar
+function limpar(){
+    document.getElementById("titulo").value="";
+    document.getElementById("texto").value="";
+    document.getElementById("imagem").value="";
+}
+
+// menu ativo
+window.addEventListener("scroll",()=>{
+    const sections=document.querySelectorAll("section");
+    const links=document.querySelectorAll("nav a");
+
+    let current="";
+
+    sections.forEach(sec=>{
+        if(scrollY>=sec.offsetTop-150){
+            current=sec.id;
+        }
+    });
+
+    links.forEach(link=>{
+        link.classList.remove("active");
+        if(link.getAttribute("href")==="#"+current){
+            link.classList.add("active");
+        }
+    });
+});
+
+// animação
+function animar(){
+    const sections=document.querySelectorAll("section");
+
+    const obs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+            if(e.isIntersecting){
+                e.target.classList.add("show");
+            }
+        });
+    });
+
+    sections.forEach(sec=>obs.observe(sec));
+}
+
+// iniciar
+carregar();
+animar();
+</script>
+
+</body>
+</html>

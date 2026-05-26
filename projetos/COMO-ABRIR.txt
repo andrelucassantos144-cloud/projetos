@@ -1,0 +1,75 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║     SITE CORINTHIANS — COMO ABRIR (LEIA ANTES DE USAR)           ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+  ATENÇÃO: Não abra o arquivo "index.html" com duplo clique!
+  O site só funciona com o servidor PHP ligado.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  WINDOWS — PASSO A PASSO (3 ETAPAS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  ETAPA 1 — Instalar o XAMPP (só na primeira vez)          │
+  └─────────────────────────────────────────────────────────────┘
+
+     1. Entre no site: https://www.apachefriends.org/download.html
+     2. Baixe o XAMPP para Windows
+     3. Instale (clique em Avançar até terminar)
+     4. Pronto — não precisa abrir o XAMPP depois disso
+
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  ETAPA 2 — Copiar esta pasta                                │
+  └─────────────────────────────────────────────────────────────┘
+
+     • Copie a pasta inteira "projetos" para o computador
+     • Pode ficar em Downloads, Área de Trabalho, etc.
+     • Não apague nenhum arquivo de dentro da pasta
+
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  ETAPA 3 — Abrir o site                                     │
+  └─────────────────────────────────────────────────────────────┘
+
+     1. Abra a pasta "projetos"
+     2. Dê DUPLO CLIQUE em:  iniciar-servidor.bat
+     3. Espere abrir uma janela preta (não feche ela!)
+     4. O navegador abrirá sozinho em: http://localhost:8000/
+
+     ████████████████████████████████████████████████████████████
+     █  PARA FECHAR O SITE: pressione Ctrl+C na janela preta   █
+     ████████████████████████████████████████████████████████████
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  DEU ERRO?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  "PHP não encontrado"
+  → Instale o XAMPP (Etapa 1) e tente de novo
+
+  "index.html não encontrado"
+  → O arquivo iniciar-servidor.bat deve estar DENTRO da pasta
+    "projetos", junto com o index.html
+
+  Página abre vazia ou com erro
+  → Feche tudo, abra de novo o iniciar-servidor.bat
+  → Acesse manualmente: http://localhost:8000/
+
+  Mais detalhes? Abra o arquivo: LEIA-ME.txt
+  Ou abra no navegador: COMO-ABRIR.html
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  RESUMO PARA QUEM ENVIOU A PASTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Envie a pasta "projetos" COMPLETA (ZIP ou pen drive).
+  A pessoa precisa instalar o XAMPP e clicar em iniciar-servidor.bat
+
+  Vai Corinthians!

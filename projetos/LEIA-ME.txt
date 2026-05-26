@@ -1,0 +1,209 @@
+================================================================================
+  SITE CORINTHIANS — INSTRUÇÕES PARA ABRIR EM OUTRO COMPUTADOR
+================================================================================
+
+  >>> GUIA RAPIDO: abra o arquivo COMO-ABRIR.txt (ou COMO-ABRIR.html) <<<
+
+Este projeto é um site sobre a história do Sport Club Corinthians Paulista.
+Ele usa HTML, CSS, JavaScript e uma API em PHP.
+
+
+--------------------------------------------------------------------------------
+  O QUE VEM NESTA PASTA
+--------------------------------------------------------------------------------
+
+  projetos/
+  ├── index.html            Página principal do site
+  ├── style.css             Estilos visuais
+  ├── script.js             Interatividade e carregamento da API
+  ├── router.php            Roteador do servidor local
+  ├── iniciar-servidor.bat  ATALHO PARA INICIAR (Windows)
+  ├── index.php             Redirecionamento (uso com Apache/XAMPP)
+  ├── COMO-ABRIR.txt        Guia rapido (comece por aqui!)
+  ├── COMO-ABRIR.html       Guia visual no navegador
+  ├── LEIA-ME.txt           Manual completo (este arquivo)
+  └── api/
+      ├── index.php         API que devolve os dados em JSON
+      └── data.php          Conteúdo do site (textos, ídolos, títulos...)
+
+
+--------------------------------------------------------------------------------
+  REQUISITOS NO COMPUTADOR NOVO
+--------------------------------------------------------------------------------
+
+  • Sistema: Windows, Mac ou Linux
+  • PHP 7.4 ou superior (recomendado PHP 8.x)
+  • Navegador moderno (Chrome, Edge, Firefox)
+  • Conexão com internet (fontes Google e imagens Unsplash)
+
+  NÃO é necessário instalar Node.js, React ou outros frameworks.
+
+
+--------------------------------------------------------------------------------
+  COMO ABRIR NO WINDOWS (FORMA MAIS FÁCIL)
+--------------------------------------------------------------------------------
+
+  PASSO 1 — Instalar o XAMPP (se ainda não tiver PHP)
+  ─────────────────────────────────────────────────
+  1. Acesse: https://www.apachefriends.org/download.html
+  2. Baixe e instale o XAMPP (versão para Windows)
+  3. Na instalação, marque pelo menos o componente "PHP"
+  4. Instale em: C:\xampp  (caminho padrão)
+
+  PASSO 2 — Copiar a pasta do projeto
+  ─────────────────────────────────────────────────
+  1. Copie a pasta inteira "projetos" para o computador novo
+     (pen drive, e-mail, ZIP, Google Drive, etc.)
+  2. Exemplo de destino: C:\Users\SeuNome\Downloads\projetos
+  3. NÃO apague nenhum arquivo da pasta
+
+  PASSO 3 — Iniciar o site
+  ─────────────────────────────────────────────────
+  1. Abra a pasta "projetos"
+  2. Dê DUPLO CLIQUE no arquivo: iniciar-servidor.bat
+  3. Aguarde a janela preta (terminal) aparecer
+  4. O navegador abrirá automaticamente em: http://localhost:8000/
+  5. MANTENHA a janela preta ABERTA enquanto usar o site
+  6. Para encerrar: feche o navegador e pressione Ctrl+C na janela preta
+
+  PRONTO! O site deve carregar com todas as seções.
+
+
+--------------------------------------------------------------------------------
+  ALTERNATIVA WINDOWS — XAMPP COM APACHE
+--------------------------------------------------------------------------------
+
+  1. Copie a pasta "projetos" para: C:\xampp\htdocs\
+  2. Abra o "XAMPP Control Panel"
+  3. Clique em "Start" ao lado de "Apache"
+  4. No navegador, acesse: http://localhost/projetos/
+     (ou http://localhost/projetos/index.html)
+
+
+--------------------------------------------------------------------------------
+  COMO ABRIR NO MAC
+--------------------------------------------------------------------------------
+
+  1. Instale o PHP (se não tiver):
+     brew install php
+     (requer Homebrew: https://brew.sh)
+
+  2. Abra o Terminal na pasta do projeto:
+     cd /caminho/para/projetos
+
+  3. Execute:
+     php -S localhost:8000 router.php
+
+  4. Abra no navegador: http://localhost:8000/
+
+
+--------------------------------------------------------------------------------
+  COMO ABRIR NO LINUX
+--------------------------------------------------------------------------------
+
+  1. Instale o PHP (Ubuntu/Debian):
+     sudo apt update
+     sudo apt install php
+
+  2. No terminal, entre na pasta:
+     cd /caminho/para/projetos
+
+  3. Execute:
+     php -S localhost:8000 router.php
+
+  4. Abra no navegador: http://localhost:8000/
+
+
+--------------------------------------------------------------------------------
+  COMO ABRIR NO VS CODE (QUALQUER SISTEMA COM PHP)
+--------------------------------------------------------------------------------
+
+  1. Instale o VS Code: https://code.visualstudio.com/
+  2. Instale a extensão "PHP" (opcional, mas recomendada)
+  3. Abra a pasta "projetos" no VS Code (Arquivo → Abrir Pasta)
+  4. Abra o terminal integrado (Ctrl + `)
+  5. Digite:
+     php -S localhost:8000 router.php
+  6. Acesse: http://localhost:8000/
+
+  No Windows com XAMPP, se "php" não for reconhecido, use:
+     C:\xampp\php\php.exe -S localhost:8000 router.php
+
+
+--------------------------------------------------------------------------------
+  TESTAR SE A API ESTÁ FUNCIONANDO
+--------------------------------------------------------------------------------
+
+  Com o servidor rodando, abra no navegador:
+
+     http://localhost:8000/api/index.php
+
+  Deve aparecer um texto em formato JSON começando com:
+     { "success": true, "data": { ...
+
+  Se isso aparecer, a API está OK.
+
+
+--------------------------------------------------------------------------------
+  O QUE NÃO FAZER
+--------------------------------------------------------------------------------
+
+  ✗ NÃO abra o index.html com duplo clique
+    (o site abre em branco ou com erro — a API precisa do servidor PHP)
+
+  ✗ NÃO use a extensão "Live Server" do VS Code
+    (ela não executa PHP)
+
+  ✗ NÃO apague a pasta "api" nem o arquivo router.php
+
+  ✗ NÃO feche o terminal enquanto estiver usando o site
+
+
+--------------------------------------------------------------------------------
+  PROBLEMAS COMUNS E SOLUÇÕES
+--------------------------------------------------------------------------------
+
+  PROBLEMA: "index.html não encontrado"
+  SOLUÇÃO: Execute o iniciar-servidor.bat DENTRO da pasta "projetos",
+           não na pasta pai.
+
+  PROBLEMA: "PHP não encontrado"
+  SOLUÇÃO: Instale o XAMPP (veja PASSO 1 acima) ou adicione o PHP ao PATH.
+
+  PROBLEMA: Página abre mas sem conteúdo / erro de API
+  SOLUÇÃO: Confirme que o servidor está rodando e acesse
+           http://localhost:8000/ (com barra no final).
+           Teste a API em http://localhost:8000/api/index.php
+
+  PROBLEMA: Porta 8000 já em uso
+  SOLUÇÃO: Feche outros servidores ou use outra porta:
+           php -S localhost:8080 router.php
+           e acesse http://localhost:8080/
+
+  PROBLEMA: Site sem estilo (só texto)
+  SOLUÇÃO: Use o servidor PHP, não abra o HTML direto. Verifique se
+           style.css está na mesma pasta que index.html.
+
+
+--------------------------------------------------------------------------------
+  CHECKLIST AO ENVIAR PARA OUTRA MÁQUINA
+--------------------------------------------------------------------------------
+
+  [ ] Enviar a pasta "projetos" COMPLETA (com todos os arquivos)
+  [ ] Incluir COMO-ABRIR.txt e LEIA-ME.txt
+  [ ] Avisar que é necessário instalar o XAMPP (Windows) ou PHP
+  [ ] Informar para usar o iniciar-servidor.bat (Windows)
+  [ ] Informar o endereço: http://localhost:8000/
+
+
+--------------------------------------------------------------------------------
+  CONTATO / CRÉDITOS
+--------------------------------------------------------------------------------
+
+  Site educacional sobre o Sport Club Corinthians Paulista.
+  Imagens: Unsplash (uso livre via URL).
+  Fontes: Google Fonts | Ícones: Font Awesome
+
+  Vai Corinthians!
+
+================================================================================

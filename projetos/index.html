@@ -1,369 +1,127 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Corinthians - História</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A história completa do Sport Club Corinthians Paulista — o time do povo.">
+    <title>Sport Club Corinthians Paulista — História</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f4f4;
-}
-
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    background:#000;
-    padding:15px;
-    text-align:center;
-    z-index:1000;
-}
-
-nav a{
-    color:#fff;
-    margin:0 15px;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#e30613;
-}
-
-nav a.active{
-    color:#e30613;
-    border-bottom:2px solid #e30613;
-}
-
-/* BANNER */
-.banner{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url('corinthians1.jpg') center/cover no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
-}
-
-/* CONTAINER */
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:120px 20px;
-}
-
-/* SEÇÕES */
-section{
-    background:white;
-    padding:25px;
-    margin-bottom:40px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    opacity:0;
-    transform:translateY(30px);
-    transition:0.5s;
-}
-
-section.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* TÍTULOS */
-h2{
-    margin-bottom:10px;
-}
-
-/* IMAGEM */
-.imagem{
-    width:100%;
-    margin-top:15px;
-    border-radius:10px;
-}
-
-/* CARDS */
-.cards{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.card{
-    flex:1;
-    min-width:250px;
-    padding:20px;
-    background:white;
-    border-radius:10px;
-    box-shadow:0 5px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-/* ADMIN */
-.admin{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-}
-
-input, textarea{
-    width:100%;
-    padding:10px;
-    margin-bottom:10px;
-}
-
-button{
-    padding:10px;
-    border:none;
-    background:black;
-    color:white;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#e30613;
-}
-
-/* LISTA */
-.item{
-    background:#eee;
-    padding:10px;
-    margin-top:10px;
-    border-radius:5px;
-}
-
-/* FOOTER */
-footer{
-    background:#000;
-    color:#aaa;
-    text-align:center;
-    padding:20px;
-}
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-    <a href="#inicio">Início</a>
-    <a href="#historia">História</a>
-    <a href="#titulos">Títulos</a>
-    <a href="#admin">Admin</a>
-</nav>
-
-<div class="banner">
-    <div>
-        <h1>Sport Club Corinthians Paulista</h1>
-        <p>Paixão, luta e conquistas</p>
+<!-- Loading inicial -->
+<div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__inner">
+        <div class="loader__shield">
+            <i class="fas fa-shield-halved"></i>
+        </div>
+        <p class="loader__text">Vai Corinthians!</p>
+        <div class="loader__bar"><span></span></div>
     </div>
 </div>
 
-<div class="container">
+<!-- Menu fixo -->
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#hero" class="nav__logo">
+            <i class="fas fa-shield-halved"></i>
+            <span>Corinthians</span>
+        </a>
+        <ul class="nav__menu" id="nav-menu">
+            <li><a href="#hero" class="nav__link active">Início</a></li>
+            <li><a href="#historia" class="nav__link">História</a></li>
+            <li><a href="#timeline" class="nav__link">Linha do Tempo</a></li>
+            <li><a href="#idolos" class="nav__link">Ídolos</a></li>
+            <li><a href="#titulos" class="nav__link">Títulos</a></li>
+            <li><a href="#galeria" class="nav__link">Galeria</a></li>
+            <li><a href="#curiosidades" class="nav__link">Curiosidades</a></li>
+            <li><a href="#arena" class="nav__link">Arena</a></li>
+        </ul>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>
 
-<!-- FIXOS -->
+<!-- Conteúdo dinâmico carregado via API -->
+<main id="app">
+    <div id="api-error" class="api-error" hidden>
+        <i class="fas fa-triangle-exclamation"></i>
+        <h2>Não foi possível carregar o conteúdo</h2>
+        <p>Verifique se o servidor PHP está rodando e acesse pelo endereço <code>http://localhost:8000</code></p>
+        <button type="button" id="btn-retry" class="btn btn--primary">Tentar novamente</button>
+    </div>
+</main>
 
-<section id="inicio">
-<h2>⚽ Fundação</h2>
-<p>Fundado em 1910 por operários, o Corinthians se tornou um dos maiores clubes do Brasil.</p>
-<img src="corinthians2.jpg" class="imagem">
-</section>
-
-<section id="historia">
-<h2>📖 História</h2>
-<p>O clube viveu momentos marcantes como o título de 1977 e a conquista da Libertadores e Mundial em 2012.</p>
-<img src="corinthians3.jpg" class="imagem">
-</section>
-
-<section id="titulos">
-<h2>🏆 Títulos</h2>
-
-<div class="cards">
-<div class="card">
-<h3>Internacionais</h3>
-<p>Libertadores 2012</p>
-<p>Mundial 2000 e 2012</p>
-</div>
-
-<div class="card">
-<h3>Nacionais</h3>
-<p>7 Brasileiros</p>
-<p>4 Copas do Brasil</p>
-</div>
-
-<div class="card">
-<h3>Estaduais</h3>
-<p>Mais de 30 títulos</p>
-</div>
-</div>
-
-</section>
-
-<!-- DINÂMICO -->
-
-<div id="conteudo"></div>
-
-</div>
-
-<!-- ADMIN -->
-
-<div class="container" id="admin">
-<div class="admin">
-<h2>Painel Admin</h2>
-
-<input id="titulo" placeholder="Título">
-<textarea id="texto" placeholder="Texto"></textarea>
-<input id="imagem" placeholder="Imagem (ex: corinthians2.jpg)">
-
-<button onclick="salvar()">Salvar</button>
-
-<div id="lista"></div>
-</div>
-</div>
-
-<footer>
-<p>Site desenvolvido para trabalho escolar</p>
+<!-- Rodapé -->
+<footer class="footer" id="footer">
+    <div class="footer__wave"></div>
+    <div class="container footer__content">
+        <div class="footer__brand">
+            <a href="#hero" class="footer__logo">
+                <i class="fas fa-shield-halved"></i>
+                <span>Sport Club Corinthians Paulista</span>
+            </a>
+            <p class="footer__tagline" id="footer-tagline">O time do povo desde 1910</p>
+        </div>
+        <div class="footer__social">
+            <h4>Siga o Timão</h4>
+            <ul class="social-list">
+                <li><a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer__links">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#timeline">Linha do Tempo</a></li>
+                <li><a href="#idolos">Ídolos</a></li>
+                <li><a href="#titulos">Títulos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__bottom container">
+        <p id="footer-copyright">&copy; Sport Club Corinthians Paulista — Site educacional.</p>
+        <p class="footer__cheer" id="footer-cheer"><strong>Vai Corinthians!</strong></p>
+    </div>
 </footer>
 
-<script>
-let editIndex=null;
+<button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+</button>
 
-// storage
-if(!localStorage.getItem("dados")){
-    localStorage.setItem("dados", JSON.stringify([]));
-}
+<div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">
+        <i class="fas fa-times"></i>
+    </button>
+    <button class="lightbox__prev" id="lightbox-prev" aria-label="Imagem anterior">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="lightbox__content">
+        <img src="" alt="" id="lightbox-img">
+        <p id="lightbox-caption"></p>
+    </div>
+    <button class="lightbox__next" id="lightbox-next" aria-label="Próxima imagem">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
 
-// carregar
-function carregar(){
-    const dados=JSON.parse(localStorage.getItem("dados"));
-    const conteudo=document.getElementById("conteudo");
-    const lista=document.getElementById("lista");
-
-    conteudo.innerHTML="";
-    lista.innerHTML="";
-
-    dados.forEach((item,i)=>{
-        conteudo.innerHTML+=`
-        <section id="extra-${i}">
-            <h2>📌 ${item.titulo}</h2>
-            <p>${item.texto}</p>
-            <img src="${item.imagem}" class="imagem">
-        </section>`;
-
-        lista.innerHTML+=`
-        <div class="item">
-            <b>${item.titulo}</b><br>
-            <button onclick="editar(${i})">Editar</button>
-            <button onclick="remover(${i})">Excluir</button>
-        </div>`;
-    });
-
-    animar();
-}
-
-// salvar
-function salvar(){
-    const titulo=document.getElementById("titulo").value;
-    const texto=document.getElementById("texto").value;
-    const imagem=document.getElementById("imagem").value;
-
-    if(!titulo || !texto){
-        alert("Preencha os campos");
-        return;
-    }
-
-    const dados=JSON.parse(localStorage.getItem("dados"));
-
-    if(editIndex===null){
-        dados.push({titulo,texto,imagem});
-    }else{
-        dados[editIndex]={titulo,texto,imagem};
-        editIndex=null;
-    }
-
-    localStorage.setItem("dados", JSON.stringify(dados));
-    limpar();
-    carregar();
-}
-
-// editar
-function editar(i){
-    const dados=JSON.parse(localStorage.getItem("dados"));
-    document.getElementById("titulo").value=dados[i].titulo;
-    document.getElementById("texto").value=dados[i].texto;
-    document.getElementById("imagem").value=dados[i].imagem;
-    editIndex=i;
-}
-
-// remover
-function remover(i){
-    const dados=JSON.parse(localStorage.getItem("dados"));
-    dados.splice(i,1);
-    localStorage.setItem("dados", JSON.stringify(dados));
-    carregar();
-}
-
-// limpar
-function limpar(){
-    document.getElementById("titulo").value="";
-    document.getElementById("texto").value="";
-    document.getElementById("imagem").value="";
-}
-
-// menu ativo
-window.addEventListener("scroll",()=>{
-    const sections=document.querySelectorAll("section");
-    const links=document.querySelectorAll("nav a");
-
-    let current="";
-
-    sections.forEach(sec=>{
-        if(scrollY>=sec.offsetTop-150){
-            current=sec.id;
-        }
-    });
-
-    links.forEach(link=>{
-        link.classList.remove("active");
-        if(link.getAttribute("href")==="#"+current){
-            link.classList.add("active");
-        }
-    });
-});
-
-// animação
-function animar(){
-    const sections=document.querySelectorAll("section");
-
-    const obs=new IntersectionObserver(entries=>{
-        entries.forEach(e=>{
-            if(e.isIntersecting){
-                e.target.classList.add("show");
-            }
-        });
-    });
-
-    sections.forEach(sec=>obs.observe(sec));
-}
-
-// iniciar
-carregar();
-animar();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

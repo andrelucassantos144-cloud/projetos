@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A história completa do Sport Club Corinthians Paulista — o time do povo.">
+    <title>Sport Club Corinthians Paulista — História</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loading inicial -->
+<div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__inner">
+        <div class="loader__shield">
+            <i class="fas fa-shield-halved"></i>
+        </div>
+        <p class="loader__text">Vai Corinthians!</p>
+        <div class="loader__bar"><span></span></div>
+    </div>
+</div>
+
+<!-- Menu fixo -->
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#hero" class="nav__logo">
+            <i class="fas fa-shield-halved"></i>
+            <span>Corinthians</span>
+        </a>
+        <ul class="nav__menu" id="nav-menu">
+            <li><a href="#hero" class="nav__link active">Início</a></li>
+            <li><a href="#historia" class="nav__link">História</a></li>
+            <li><a href="#timeline" class="nav__link">Linha do Tempo</a></li>
+            <li><a href="#idolos" class="nav__link">Ídolos</a></li>
+            <li><a href="#titulos" class="nav__link">Títulos</a></li>
+            <li><a href="#galeria" class="nav__link">Galeria</a></li>
+            <li><a href="#curiosidades" class="nav__link">Curiosidades</a></li>
+            <li><a href="#arena" class="nav__link">Arena</a></li>
+        </ul>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- Conteúdo dinâmico carregado via API -->
+<main id="app">
+    <div id="api-error" class="api-error" hidden>
+        <i class="fas fa-triangle-exclamation"></i>
+        <h2>Não foi possível carregar o conteúdo</h2>
+        <p>Verifique se o servidor PHP está rodando e acesse pelo endereço <code>http://localhost:8000</code></p>
+        <button type="button" id="btn-retry" class="btn btn--primary">Tentar novamente</button>
+    </div>
+</main>
+
+<!-- Rodapé -->
+<footer class="footer" id="footer">
+    <div class="footer__wave"></div>
+    <div class="container footer__content">
+        <div class="footer__brand">
+            <a href="#hero" class="footer__logo">
+                <i class="fas fa-shield-halved"></i>
+                <span>Sport Club Corinthians Paulista</span>
+            </a>
+            <p class="footer__tagline" id="footer-tagline">O time do povo desde 1910</p>
+        </div>
+        <div class="footer__social">
+            <h4>Siga o Timão</h4>
+            <ul class="social-list">
+                <li><a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer__links">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#timeline">Linha do Tempo</a></li>
+                <li><a href="#idolos">Ídolos</a></li>
+                <li><a href="#titulos">Títulos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__bottom container">
+        <p id="footer-copyright">&copy; Sport Club Corinthians Paulista — Site educacional.</p>
+        <p class="footer__cheer" id="footer-cheer"><strong>Vai Corinthians!</strong></p>
+    </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">
+        <i class="fas fa-times"></i>
+    </button>
+    <button class="lightbox__prev" id="lightbox-prev" aria-label="Imagem anterior">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="lightbox__content">
+        <img src="" alt="" id="lightbox-img">
+        <p id="lightbox-caption"></p>
+    </div>
+    <button class="lightbox__next" id="lightbox-next" aria-label="Próxima imagem">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+================================================================================
+  PROJETO CORINTHIANS — TRABALHO DE FACULDADE
+  Site institucional com PHP 8+ e MySQL
+================================================================================
+
+ESTRUTURA DO PROJETO
+--------------------
+projeto-corinthians/
+├── index.php              Página inicial
+├── historia.php           História do clube
+├── titulos.php            Títulos e conquistas
+├── idolos.php             Ídolos do Corinthians
+├── arena.php              Neo Química Arena
+├── galeria.php            Galeria com lightbox
+├── contato.php            Formulário de contato
+├── admin/                 Área administrativa (CRUD notícias)
+├── assets/css/            Estilos (style.css + admin.css)
+├── assets/js/             JavaScript (main.js)
+├── database/
+│   ├── corinthians.sql    Script SQL — importar no phpMyAdmin
+│   └── conexao.php        Conexão PDO com MySQL
+└── includes/              Header, footer, auth, funções
+
+
+COMO INSTALAR (XAMPP — Windows)
+-------------------------------
+1. Instale o XAMPP: https://www.apachefriends.org/download.html
+
+2. Copie a pasta "projeto-corinthians" para:
+   C:\xampp\htdocs\
+
+3. Abra o XAMPP Control Panel e inicie:
+   - Apache
+   - MySQL
+
+4. Acesse o phpMyAdmin: http://localhost/phpmyadmin
+
+5. Clique em "Importar" e selecione o arquivo:
+   database/corinthians.sql
+
+6. Abra o site no navegador:
+   http://localhost/projeto-corinthians/
+
+7. Área administrativa:
+   http://localhost/projeto-corinthians/admin/login.php
+   E-mail: admin@corinthians.local
+   Senha: admin123
+
+
+CONFIGURAÇÃO DO BANCO
+---------------------
+Se necessário, edite includes/config.php:
+
+   DB_HOST = localhost
+   DB_NAME = corinthians_db
+   DB_USER = root
+   DB_PASS =          (vazio no XAMPP padrão)
+
+
+TECNOLOGIAS UTILIZADAS
+----------------------
+- HTML5 semântico
+- CSS3 responsivo (preto, branco, cinza #444)
+- JavaScript (menu, scroll, lightbox, animações)
+- PHP 8+ (páginas dinâmicas, sessões, PDO)
+- MySQL (5 tabelas + dados iniciais)
+
+
+TABELAS DO BANCO
+----------------
+- usuarios    → Administradores
+- noticias    → Notícias (CRUD no admin)
+- galerias    → Imagens da galeria
+- titulos     → Títulos e conquistas
+- idolos      → Ídolos com estatísticas
+- timeline    → Linha do tempo histórica
+
+
+APRESENTAÇÃO NA FACULDADE
+---------------------------
+- Demonstrar páginas públicas (história, títulos, ídolos, arena, galeria)
+- Mostrar lightbox na galeria
+- Login no admin e cadastrar/editar/excluir notícia
+- Explicar estrutura MVC simplificada (includes + páginas)
+- Mostrar script SQL e conexão PDO
+
+Vai Corinthians!
+
+================================================================================
